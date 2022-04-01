@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="card" style="box-shadow: 5px 8px 10px 10px rgb(241, 233, 233); text-align: center; width: 35%; margin: 4% 33%;">
+    <div class="card-body">
+      <h4 class="card-titles" style="font-size: 50px;">Employee Details</h4>
+      <p class="card-text">
+        <form method="post" enctype="multipart/form-data", onSubmit="return check_Alpha(this)">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Create">
+        </form>
+      </p>
+    </div>
+  </div>
+{% endblock %}

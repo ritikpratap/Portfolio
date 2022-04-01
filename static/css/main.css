@@ -1,0 +1,32 @@
+.errorlist{
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 600;
+    color: red;
+}
+
+#username{
+    font-size: larger;
+    font-weight: 600;
+    color: red;
+}
+
+.success{
+    list-style-type: none;
+    font-size: larger;
+    font-weight: 600;
+    color:green;
+    font-family: sans-serif;
+}
+.helptext{
+    font-size: 10px;
+}
+
+label{
+    font-weight:bold;
+}
+
+ul{
+    list-style-type: none;
+    font-size: 10px;
+}

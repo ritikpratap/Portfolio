@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+        <div class="card" style="text-align: center; box-shadow: 5px 8px 10px 10px rgb(241, 233, 233); height: 30%; width: 40%; float: right; margin: 5% 10% 0px 3px;">
+            <div class="card-body">
+              <h4 class="card-titles" style="font-size: 50px;">Sentiment Analyzer</h4>
+              <p class="card-text">
+                <form method="POST">
+                    <div class="form-group" style="margin-bottom: 2%;">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                      <input class="btn btn-primary" style="width: 30%;" value="Analyze" type="submit" onclick="myFunction()">
+                    </div>
+                  </form>
+              </p> 
+            </div>
+        </div>
+
+        <div class="card" style="box-shadow: 5px 8px 10px 10px rgb(241, 233, 233); height: 30%; width: 40%; float: left; margin: 5% 3px 0px 7%;">
+          <div class="card-body">
+            <h4 class="card-titles" style="font-size: 50px;"></h4>
+            <p class="card-text" id="mydiv">
+              Enter your desired sentance(s) and find out the demographics behind those statement(s).
+              After clicking the 'Analyze' button the polarity of that statement will appear in the below table.
+            </p>
+            <strong>{{msg}}</strong><br>
+            
+            <table class="table table-responsive" style="text-align: center;">
+              <tr>
+                <th>positive</th>
+                <th>neutral</th>
+                <th>negetive</th>
+              </tr>
+              <tr style="text-align: center;">
+                <td>{{neg}}</td>
+                <td>{{neu}}</td>
+                <td>{{pos}}</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+{% endblock %}

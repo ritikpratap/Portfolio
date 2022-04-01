@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="card" style="box-shadow: 5px 8px 10px 10px rgb(241, 233, 233); height: 40%; width: 35%; margin: 2% 33%;">
+    <div class="card-body">
+      <h4 class="card-titles" style="font-size: 40px;">System Registration</h4>
+      <p class="card-text">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Register">
+        </form>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

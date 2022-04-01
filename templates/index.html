@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+    
+{% if user.is_authenticated %}
+    <table class="table table-striped table-light">
+        <thead>
+            <tr>
+            
+                <th scope="col">Name</th>
+                <th scope="col"></th>
+                
+            </tr>
+        </thead>
+        {% for post in emps %}
+            {% if user.id == post.author.id %}
+                <tbody>
+                    <tr>
+                        <td>{{post.first_name}}</td>
+                        <td><a href="/user/{{ post.id }}/"><button type="submit" class="btn btn-info">info</button></a></td>
+                    </tr>
+                </tbody>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+{% else %}
+<div class="text-center">
+    <h1>Welcome to our Homepage</h1>
+    <h3>
+        You need to login.
+    </h3>
+
+</div>
+
+{% endif %}
+{% endblock %}
